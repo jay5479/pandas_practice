@@ -85,5 +85,5 @@ show_decoration(13)
 # Notes:
 # 1. A data frame is a two-dimensional array i.e, just rows & columns.
 # 2. A series is a one-dimensional array i.e, rows/values in a column.
-# 3. The loc() method unlike iloc() method treats int args as labels because df rows unless
+# 3. The loc() method unlike iloc() method treats int args as labels because df rows, unless
 #    labelled explicitly, will take their indices as default labels.
