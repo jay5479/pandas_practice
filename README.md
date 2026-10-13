@@ -9,3 +9,5 @@ Order of studies:
 2. pandas_series_basics.py
 3. pandas_series_and_counting_basics.py
 4. pandas_indexing_basics.py
+5. pandas_filtering_basics.py
+6. pandas_updating_basics.py
