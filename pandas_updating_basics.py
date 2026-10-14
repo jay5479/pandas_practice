@@ -90,6 +90,15 @@ print(people_df[filt]["Last"])
 
 show_decoration(8)
 
+# Let's learn how to bulk update our data.
+# Let's see how to modify all values of a column. Use the str.upper() method on the
+# column and assign it back to the original column. The values in original series
+# is now overwritten with the new values after str.upper() on series.
+people_df["EMAIL"] = people_df["EMAIL"].str.upper()
+print(people_df["EMAIL"])
+
+show_decoration(9)
+
 
 
 
