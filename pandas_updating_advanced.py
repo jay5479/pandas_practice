@@ -149,7 +149,7 @@ show_decoration(13)
 # 1. The code in line 30 is same as len(people_df). Just another way to do it.
 # 2. Note that the apply() method, when we're applying it over a df, always
 #    applies our function either on rows or columns depending on how we want it.
-#    The len() is not applied to each and every value from our df because of it
+#    The len() is not applied to each and every value from our df because if it
 #    did then it will give us the length of each str value in our df. This is
 #    why we use map() instead.
 # 3. Note that in line 67, our df only contain str values. When using min() on

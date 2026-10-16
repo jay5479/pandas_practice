@@ -13,3 +13,4 @@ Order of studies:
 6. pandas_updating_basics.py
 7. pandas_updating_advanced.py
 8. pandas_add_remove_rows_columns.py
+9. pandas_sorting_basics.py

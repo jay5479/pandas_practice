@@ -142,5 +142,5 @@ show_decoration(9)
 #    will throw a TypeError and say we can't append a dict unless we ignore
 #    the index. Also note that the int age values in your df converts to float
 #    the moment a NaN type enters your df. Read about it separately.
-# 6. Brush up on your filtering basics if you don't understanding what we are
+# 6. Brush up on your filtering basics if you aren't understanding what we are
 #    doing in line 111 & 115.
