@@ -11,7 +11,7 @@ people = {
     }
 
 pd.set_option('display.max_rows', 10)
-pd.set_option('display.max_columns', 5)
+pd.set_option('display.max_columns', 10)
 
 people_df = pd.DataFrame(people)
 
@@ -100,8 +100,6 @@ show_decoration(7)
 people_df.drop(index=[0, 1], inplace=True)
 print(people_df)
 
-# reverting the above change to demonstrate next concept
-
 
 show_decoration(8)
 
@@ -117,6 +115,63 @@ print(people_df)
 
 show_decoration(9)
 
+# We can also concatenate entire dataframes to existing frames as long as the no.of
+# columns and its key (i.e, column_names) match. Else ValueError.
+# Your new df that is to be concatenated can have the column names in any order as
+# long as the keys match.
+# Let's create another sample df that has the same columns but in different
+# order as people_df to demonstrate this.
+super_extra_folks = {
+    "Last":["Raja", "Krishnan"],
+    "First":["Rakesh", "Santhana"],
+    "Email":["appu@gmail.com", "santhan@gmail.com"],
+    "Age":[39, 32],
+    "Full_Name":["Rakesh Raja", "Santhana Krishnan"]
+}
+
+super_extra_df = pd.DataFrame(super_extra_folks)
+
+# Let's concatenate to new df to our people_df and save it.
+# Syntax: pd.concat([df_1, df_2, ...df_n], axis="rows" | "columns")
+# The method also takes an optional axis arg. Default concatenation is
+# over rows if no arg supplied to the axis params.
+# Note that This is a pd. method not df.
+people_df = pd.concat([people_df, super_extra_df])
+print(people_df)
+
+show_decoration(10)
+
+# Come back here and uncomment this line after you have studied the remainder
+# of this module and went through all your notes. Then run this module and
+# check the outputs of all code blocks below this block, especially their row index.
+# people_df.reset_index(drop=True, inplace=True)
+
+show_decoration(11)
+
+# We can also concatenate the dataframes by columns if we supply the "columns"
+# arg to the axis params.
+# Note that this type of concatenation is ill-advised especially if both your
+# dfs have the same Keys. This will result in duplicate columns in your resultant
+# df and Nan types for values where the data doesn't fit.
+# Hence, we are not saving this to people_df.
+print(pd.concat([people_df, super_extra_df], axis="columns"))
+
+show_decoration(12)
+
+# So it is always wiser to use the column wise concatenation for adding new
+# unique columns/Keys of data to your df instead. Any value omitted to be added
+# in the new columns will be filled with a NaN type instead.
+new_data = {
+    "Sex":["Male", "Male"],
+    "Location":["Kolathur", "Periyar Nagar"]
+}
+
+new_data_df = pd.DataFrame(new_data)
+
+people_df = pd.concat([people_df, new_data_df], axis="columns")
+print(people_df) # check notes.
+
+show_decoration(13)
 
 
 
@@ -144,3 +199,21 @@ show_decoration(9)
 #    the moment a NaN type enters your df. Read about it separately.
 # 6. Brush up on your filtering basics if you aren't understanding what we are
 #    doing in line 111 & 115.
+# 7. The output for line 167 will show the Sex and Location values concatenated
+#    to the tail end entries of the people_df instead of concatenating from the
+#    top most records. This is because the new_data_df values will always get
+#    concatenated by the default row label / row indices. So the new columns'
+#    (Sex & Location) get concatenated to the records with 0 & 1 indices first.
+# 8. Just add two more values to the sex and location columns in new_data and see
+#    what happens to the output to understand better. The 3rd value of our column
+#    will be concatenated to a new row with a row index of 2 since it was not
+#    available in our people_df.
+# 9. Appending, concatenating amd dropping rows always mess up default row
+#    indices. Use the .reset_index(drop=True, inplace=True) method if needed after such
+#    operations on use case basis. The drop=True arg will drop the old indices of the
+#    people_df in your final results. If this arg is not supplied or set to
+#    False then along with your newly reset indices, you will get another new
+#    "indices" column in your final df which shows the past row labels that
+#    your df had prior to index reset.
+# 10. Uncomment and play around with line 147 to understand this and fix the
+#     outputs of remaining code blocks.
