@@ -42,7 +42,7 @@ print(df.columns)
 show_decoration(6)
 
 # Grab a row using its index in df
-print(df.iloc[0]) # returns the first row of our df, iloc stads for integer location
+print(df.iloc[0]) # returns the first row of our df, iloc stands for integer location
 print(type(df.iloc[0])) # returns a series obj
 
 show_decoration(7)
