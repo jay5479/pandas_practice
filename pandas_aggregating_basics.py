@@ -3,8 +3,8 @@ import pandas as pd
 from utils.string_ops import show_decoration
 
 
-# load big data df from csv for big data with respondent column as index column
-results_df = pd.read_csv("survey_results_public.csv") #index_col="Respondent")
+# load big data df from csv for big data.
+results_df = pd.read_csv("survey_results_public.csv")
 
 # set max display values
 pd.set_option('display.max_columns', 5)
@@ -44,7 +44,7 @@ show_decoration(3)
 filt = (results_df["Country"] == "India")
 
 # Let us now filter out by LanguageWorkedWith where Python is present. This will
-# return a conditional (Series obj with True/False values) again since
+# return a conditional/mask (Series obj with True/False values) again since
 # we are asking it to check if the values in the filtered Series is containing
 # a specific string i.e, "Python". Refresh filtering basics module if you don't
 # understand this.
@@ -135,3 +135,7 @@ show_decoration(11)
 #    division by 100 to get the final percentages was accurate.
 # 5. Keep caution of such operations and output when you're multiplying objects
 #    that don't have such 1:1 mapping values.
+# 6. You can also use the agg() method to run custom functions defined in your
+#    module. Simply pass the name of the function to the list as str instead of
+#    calling it. Read documentation or ask AI about the agg() method in pandas
+#    to learn more nuances of its usage.
