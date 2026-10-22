@@ -15,3 +15,6 @@ Order of studies:
 8.  pandas_add_remove_rows_columns.py
 9.  pandas_sorting_basics.py
 10. pandas_aggregating_basics.py
+11. pandas_cleaning_basics.py
+12. pandas_casting_basics.py
+13. pandas_cleaning_advanced.py
