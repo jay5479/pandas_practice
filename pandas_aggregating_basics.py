@@ -36,6 +36,15 @@ print(country_group["ConvertedComp"].agg(["mean", "median"]).loc["Switzerland"])
 
 show_decoration(3)
 
+# You can also run agg() on specific columns with specific functions per column
+# like so. This is called multi-aggregation.
+# Note agg() is a method which is not limited to just groupby objects. You can
+# run it over your entire dataframe as well.
+# Here we just run it on groupby obj to show the results country-wise.
+print(country_group.agg({"ConvertedComp":"mean", "WorkWeekHrs":"median", "Age1stCode":"min"}))
+
+show_decoration(4)
+
 # Now let's try to answer how many people from each country know python.
 # In doing so let's also learn how to apply custom functions on your group and
 # aggregate results.
@@ -50,7 +59,7 @@ filt = (results_df["Country"] == "India")
 # understand this.
 print(results_df.loc[filt, "LanguageWorkedWith"].str.contains("Python", na=False))
 
-show_decoration(4)
+show_decoration(5)
 
 # let's run the sum() method on the above. The sum method when ran on a conditional
 # i.e, a series with bool types will consider all False values as 0 and True
@@ -58,7 +67,7 @@ show_decoration(4)
 # Now we know how many people from India know python.
 print(results_df.loc[filt, "LanguageWorkedWith"].str.contains("Python", na=False).sum())
 
-show_decoration(5)
+show_decoration(6)
 
 # We can re-use the country filter conditional and by changing the Country value
 # manually, we can answer the question for all remaining countries one by one.
@@ -71,7 +80,7 @@ show_decoration(5)
 # comment out the code and run to see the error.
 # print(country_group["LanguageWorkedWith"].str.contains("Python", na=False))
 
-show_decoration(6)
+show_decoration(7)
 
 # The code above this errored because str methods don't work on GroupBy obj.
 # So instead, we will use the apply() method with a custom function that applies
@@ -79,7 +88,7 @@ show_decoration(6)
 # up the values.
 print(country_group["LanguageWorkedWith"].apply(lambda x: x.str.contains("Python", na=False).sum()))
 
-show_decoration(7)
+show_decoration(8)
 
 # Let us do another exercise. Let's now figure out how many percentage of people
 # from each country who answered the Survey know python.
@@ -95,14 +104,14 @@ country_uses_python = country_group["LanguageWorkedWith"].apply(lambda x: x.str.
 custom_df = pd.concat([country_resp, country_uses_python], axis="columns")
 print(custom_df)
 
-show_decoration(8)
+show_decoration(9)
 
 # now the custom_df shows all values needed for calculating percentages but the
 # column headers are misleading. So let's rename it.
 custom_df.rename(columns={"count": "Total Respondents", "LanguageWorkedWith":"Python Knowers"}, inplace=True)
 print(custom_df)
 
-show_decoration(9)
+show_decoration(10)
 
 # now let's simply add a new column to our df that calculates percentages.
 # pandas supports mathematical operations on numerical series, we leverage that.
@@ -110,12 +119,12 @@ show_decoration(9)
 custom_df["prct of python knowers"] = (custom_df["Python Knowers"] / custom_df["Total Respondents"]) * 100
 print(custom_df)
 
-show_decoration(10)
+show_decoration(11)
 
 # now we can pull this stat for any specific country easily by
 print(custom_df.loc["Japan"])
 
-show_decoration(11)
+show_decoration(12)
 
 
 # Notes:

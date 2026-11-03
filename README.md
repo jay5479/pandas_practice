@@ -3,6 +3,8 @@ The following files should be present in project root for modules to work
 1. 2019 Developer Survey.pdf
 2. survey_results_public.csv
 3. survey_results_schema.csv
+4. ETH_1h.csv
+
 
 Order of studies:
 1.  pandas_basics.py
@@ -18,3 +20,5 @@ Order of studies:
 11. pandas_cleaning_basics.py
 12. pandas_casting_basics.py
 13. pandas_cleaning_advanced.py
+14. pandas_datetime_basics.py
+15. pandas_datetime_advanced.py
