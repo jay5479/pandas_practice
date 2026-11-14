@@ -4,6 +4,8 @@ The following files should be present in project root for modules to work
 2. survey_results_public.csv
 3. survey_results_schema.csv
 4. ETH_1h.csv
+5. /data - this is just a folder which will hold all the files that we 
+   will be creating/writing to later in the pandas_fileio chapters.
 
 
 Order of studies:
@@ -22,3 +24,5 @@ Order of studies:
 13. pandas_cleaning_advanced.py
 14. pandas_datetime_basics.py
 15. pandas_datetime_advanced.py
+16. pandas_fileio_basics.py
+17. pandas_dbio_basics.py

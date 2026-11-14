@@ -27,7 +27,7 @@ show_decoration(1)
 # This module builds upon the datetime basics chapter.
 # Let's say we want to get the average volume traded per week, then we would
 # do something like so, note that we have to repeat this step for every date
-# that we require and then once more repeat for every week.
+# that we require and then repeat it again once more for every week.
 print(eth_df.loc["2020-02-29", "Volume"].mean())
 
 # And let's say we want to view the highs of each day, then first we would need
@@ -99,8 +99,8 @@ highs.plot()
 # Once pandas plot is generated, we can now see it using the plt.show() from
 # matplotlib. This will also open a pyplot display backend window to render
 # your plot.
-# You will see the output chart only here you're using regular IDEs like pycharm
-# poor people edition or other similar IDE's like Sublime.
+# You will see the output chart only at this step if you're using regular IDEs
+# like pycharm poor people's edition or other similar IDE's like Sublime.
 plt.show()
 
 show_decoration(9)
