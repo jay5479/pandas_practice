@@ -71,7 +71,7 @@ print(temp_df.shape) # just checking how many rows we are adding
 # If you want the row labels/indices alone to be dropped while writing to
 # db, use the index=False arg. This actually drops all values here and replaces
 # it with null on our respondent column because the respondent column already
-# exists in our DB amd we are just trying to drop the indices while appending
+# exists in our DB. We are just trying to drop the indices while appending
 # to it. Check notes
 temp_df.to_sql("france_survey", con=engine, if_exists="append", index=False)
 

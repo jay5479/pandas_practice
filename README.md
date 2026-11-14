@@ -26,3 +26,4 @@ Order of studies:
 15. pandas_datetime_advanced.py
 16. pandas_fileio_basics.py
 17. pandas_dbio_basics.py
+18. pandas_merge_basics.py
