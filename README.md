@@ -27,3 +27,6 @@ Order of studies:
 16. pandas_fileio_basics.py
 17. pandas_dbio_basics.py
 18. pandas_merge_basics.py
+19. pandas_join_basics.py
+20. pandas_validation_basics.py
+21. pandas_multi_index_basics.py

@@ -107,21 +107,21 @@ print(cleaned_df)
 
 show_decoration(7)
 
-# By default, merge() does an inner join on your left and right dfs and drops
+# By default, merge() does an INNER JOIN on your left and right dfs and drops
 # any unmatched records if you do not supply any additional params.
 # But sometimes you want to preserve data from one or both tables while still
 # joining them similar to the LEFT, RIGHT and OUTER JOINS in SQL.
 # To do so, supply the how= params with your join type as its str arg.
-# Let's take our emp_df and dept_df to demonstrate a left join.
+# Let's take our emp_df and dept_df to demonstrate a LEFT JOIN.
 left_df = pd.merge(emp_df, dept_df, on="dept_id", how="left")
 
 # The above line matches against dept_id values across both dfs but retains
-# left df's records and fills it with NaN types where unmatched.
+# left df's records and fills it with NaN types where values are not available.
 print(left_df)
 
 show_decoration(8)
 
-# Similarly for a right join where records from the right table is preserved.
+# Similarly for a RIGHT JOIN where records from the right table is preserved.
 # Note emp_id is converted to float as soon as NaN enters the column. Read
 # casting basics if you do not understand this.
 right_df = pd.merge(emp_df, dept_df, on="dept_id", how="right")
@@ -129,7 +129,7 @@ print(right_df)
 
 show_decoration(9)
 
-# Similarly for an outer join where every single record from both tables are
+# Similarly for an OUTER JOIN where every single record from both tables are
 # retained with NaN types filling for unmatched values.
 # Below line still works with the pd.merge() syntax as well but changing it
 # here to the other syntax studied previously just to show all these operations
