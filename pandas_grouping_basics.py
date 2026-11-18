@@ -103,7 +103,7 @@ show_decoration(10)
 # We can also further pull results for specific groups instead of pulling for
 # every group using the .loc["row_label"] notation where row_label is the group
 # you want to access.
-# Let's see which SocialMedia, the prevert and unhygienic nation uses the most.
+# Let's see which SocialMedia, the pervert and unhygienic nation uses the most.
 print(country_group["SocialMedia"].value_counts().loc["India"])
 
 show_decoration(11)
@@ -147,10 +147,10 @@ show_decoration(14)
 #    results_df["SocialMedia"].value_counts(normalize=True) * 100
 # 6. The groupby() and get_group() work similar to filters that we learnt
 #    previously. But the advantage of using groupby objects instead of filters
-#    is that you don't have to write a filter every time for different values
-#    across a series  for a particular value
-#    to display your filtered data. You simply change the country name
-#    on your conutry_group.value_count().loc["India"] line to access.
+#    is that you don't have to write a filter every time for accessing a different
+#    group and its values to see your grouped and filtered data. You simply
+#    change the country name on your conutry_group.value_count().loc["India"]
+#    line to access your group's data.
 # 7. To do the above with filters. you have to do so:
 #    filt = (results_df[Country] == "United States")
 #    results_df.loc[filt, "SocialMedia"].value_counts()
